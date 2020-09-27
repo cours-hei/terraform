@@ -23,9 +23,9 @@ Outil qui permet de *construire*, *modifier* et *versionner* une infrastructure
 
 ### Trois étapes
 
-- Write : écriture de la définition de ses ressources dans des fichiers au format *.tf
-- Plan : un plan des ressources à créer/modifier & supprimer est affiché, avant tout changement
-- Create : l'infrastructure voulue est mise en place, et reproductible dans tous les environnements souhaités
+- *Write* : écriture de la définition de ses ressources dans des fichiers au format *.tf
+- *Plan* : un plan des ressources à créer/modifier & supprimer est affiché, avant tout changement
+- *Create* : l'infrastructure voulue est mise en place, et reproductible dans tous les environnements souhaités
 
 ----
 
