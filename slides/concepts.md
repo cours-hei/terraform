@@ -51,6 +51,26 @@ export AWS_DEFAULT_REGION=eu-central-1
 
 ----
 
+### Provisionners
+
+Permet de modifier le contenu d'une machine distantes
+A n'utiliser qu'en dernier recours. D'autres outils peuvent être utilisés, notamment Packer
+
+----
+
+### Provisionners
+
+Plusieurs types de provisionners
+- File
+- Local-exec
+- Remote-exec
+- Chef
+- Habitat
+- Puppet
+- Salt
+
+----
+
 ### Variables
 
 Possibilité d'externaliser des variables dans un autre fichier .tf (ex. variables.tf)
