@@ -1,4 +1,4 @@
-# Cours Docker/Kubernetes HEI
+# Cours Terraform HEI
 #### By
 ##### Laurent Grangeau
 
