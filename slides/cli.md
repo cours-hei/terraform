@@ -27,6 +27,10 @@ $ terraform init
 
 Permet de créer un plan d'exécution. Terraform va déterminer quelles actions il doit entreprendre afin d'avoir les ressources listées dans les fichiers de configuration par rapport à ce qui est actuellement en place sur l'environnement/le fournisseur cible
 
+----
+
+### Plan
+
 Cette commande n'effectue concrètement rien sur l'infrastructure
 
 ```bash
