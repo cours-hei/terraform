@@ -8,6 +8,10 @@ Initialise le répertoire de travail qui contient les fichiers de configuration 
 
 C'est la première commande à exécuter pour une nouvelle configuration, ou après avoir fait un checkout d'une configuration existante, depuis un dépôt git par exemple
 
+----
+
+### Init
+
 La commande init va :
 - télécharger et installer les fournisseurs (providers)
 - initialiser le backend (si défini)
@@ -101,4 +105,4 @@ Permet de dessiner un graphique de dépendances visuel des ressources Terraform 
 terraform graph | dot -Tpng > graph.png`
 ```
 
-![Image](https://aurelie-vache.developpez.com/tutoriels/cloud/terraform-gerer-infrastructure-code/images/image-6.png)
+<img src="https://aurelie-vache.developpez.com/tutoriels/cloud/terraform-gerer-infrastructure-code/images/image-6.png" width="460px" />
