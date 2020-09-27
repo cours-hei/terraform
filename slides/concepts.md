@@ -125,3 +125,65 @@ resource "aws_api_gateway_authorizer" "custom_authorizer" {
   authorizer_result_ttl_in_seconds = "30"
 }
 ```
+
+----
+
+### Data sources
+
+Récupère une donnée/ressource existante dans votre infrastructure
+
+Utiliser une source de données est une bonne pratique
+
+En effet, il est bon de privilégier son utilisation plutôt que de coder en dur des ```subnet_id```, ```account_id``` ou autre donnée qui peut être récupérée
+
+```json
+# VPC
+data "aws_subnet" "subnet_id_1" {
+  filter {
+    name = "tag:Name"
+    values = ["lgu-subnet"]
+ }
+}
+```
+
+----
+
+### Data sources
+
+Utilisation des data sources dans les fichiers .tf
+
+```json
+module "lgu-sn" {
+    source = "lgu-sn"
+    subnet_id_1 = "${data.aws_subnet.subnet_id_1.id}"
+}
+```
+
+----
+
+### State
+
+Snapshot de l'infrastructure depuis le dernier ```terraform apply```
+
+Fichier stocké en local
+
+![Image](https://cdn-images-1.medium.com/max/1024/1*lYFNHNM03biX_95IQMayUw.png)
+
+----
+
+### State
+
+Possibilité de stocker ce fichier dans le cloud
+
+```json
+# Backend configuration is loaded early so we can't use variables
+
+terraform {
+  backend "s3" {
+    region  = "eu-central-1"
+    bucket  = "lgu-bucket"
+    key     = "state.tfstate"
+    encrypt = true
+  }
+}
+```
