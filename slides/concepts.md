@@ -92,6 +92,7 @@ resource "aws_s3_bucket" "lgu-bucket" {
 ### Modules
 
 Utilisé pour créer des composants réutilisables, améliorer l'organisation et traiter les éléments de l'infrastructure comme une boite noire
+
 Groupe de ressource qui prend en entrée des *paramètres* et retournent en sortie des *outputs*
 
 ```json
