@@ -167,7 +167,7 @@ Snapshot de l'infrastructure depuis le dernier ```terraform apply```
 
 Fichier stocké en local
 
-![Image](https://cdn-images-1.medium.com/max/1024/1*lYFNHNM03biX_95IQMayUw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*lYFNHNM03biX_95IQMayUw.png" width="512px" />
 
 ----
 
