@@ -54,6 +54,7 @@ export AWS_DEFAULT_REGION=eu-central-1
 ### Provisionners
 
 Permet de modifier le contenu d'une machine distantes
+
 A n'utiliser qu'en dernier recours. D'autres outils peuvent être utilisés, notamment Packer
 
 ----
@@ -68,6 +69,25 @@ Plusieurs types de provisionners
 - Habitat
 - Puppet
 - Salt
+
+----
+
+### Provisionners
+
+```json
+  provisioner "remote-exec" {
+      inline = [
+          "sudo apt update && sudo apt -y full-upgrade"
+      ]
+
+      connection {
+          type = "ssh"
+          host = self.public_ip
+          user = "ubuntu"
+          private_key = file("~/.ssh/id_rsa")
+      }
+  }
+```
 
 ----
 
