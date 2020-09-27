@@ -1,15 +1,10 @@
 ## En conclusion
 
-- Le cloud c'est la vie
-- Plusieurs offres cloud pour plusieurs populations
-- Faire le bon choix au bon moment
-- Le cloud permet de nouvaeux business model qui n'existaient pas auparavant
-
 ----
 
-### Les containers
+### Terraform
 
-- Les containers sont un nouveau paradigme
-- Sans orchestration, peu d'utilité des containers
-- La courbe d'apprentissage n'est pas négligeable
-- L'installation et la maintenance d'un orchestrateur prend du temps
+- Permet de faire de l'infra-as-code
+- Ouvre les portes du DevOps
+- Très utile dans le CI/CD
+- Permet d'appliquer les paradigmes de développement sur de l'infrastructure
