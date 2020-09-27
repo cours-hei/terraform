@@ -69,6 +69,10 @@ variable "tags-contact" {
 }
 ```
 
+----
+
+### Variables
+
 Utilisation dans les fichiers .tf
 
 ```json
