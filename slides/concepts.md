@@ -14,7 +14,7 @@ Décrit les ressource utilisées dans Terraform
 Responsable du cycle de vie de la ressource
 Basé sur le CRUD (*Create/Read/Update/Delete*)
 
-Plus de 125 providers existants :
+Plus de 1375 providers existants :
 - AWS, GCP, Azure, ...
 - Heroku, OVH, 1&1, ...
 - Consul, Chef, Vault, ...
@@ -51,17 +51,17 @@ export AWS_DEFAULT_REGION=eu-central-1
 
 ----
 
-### Provisionners
+### Provisioners
 
-Permet de modifier le contenu d'une machine distantes
+Permet de modifier le contenu d'une ressource distante
 
 A n'utiliser qu'en dernier recours. D'autres outils peuvent être utilisés, notamment Packer
 
 ----
 
-### Provisionners
+### Provisioners
 
-Plusieurs types de provisionners
+Plusieurs types de provisioners
 - File
 - Local-exec
 - Remote-exec
@@ -72,7 +72,7 @@ Plusieurs types de provisionners
 
 ----
 
-### Provisionners
+### Provisioners
 
 ```json
   provisioner "remote-exec" {
@@ -201,6 +201,28 @@ module "lgu-sn" {
 
 ----
 
+### Import de ressources
+
+Import de ressources existantes dans les fichiers .tf
+Cela permet de réaliser des migrations progressive de l'infrastructure
+
+```bash
+terraform import aws_instance.frontend i-abcd1234
+```
+```json
+resource "aws_instance" "frontend" {
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "Frontend-HelloWorld"
+  }
+}
+
+
+```
+
+----
+
 ### State
 
 Snapshot de l'infrastructure depuis le dernier ```terraform apply```
@@ -227,3 +249,5 @@ terraform {
   }
 }
 ```
+
+
