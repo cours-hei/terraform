@@ -14,6 +14,7 @@ Outil qui permet de *construire*, *modifier* et *versionner* une infrastructure
 
 ### Que fait l'outil ?
 
+- Il permet de provisionner une infrastructure As Code
 - Il assure la création et la cohérence d'infrastructure
 - Il permet d'appliquer des modifications incrémentales
 - On peut détruire des ressources si besoin
