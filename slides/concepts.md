@@ -209,6 +209,7 @@ Cela permet de réaliser des migrations progressive de l'infrastructure
 ```bash
 terraform import aws_instance.frontend i-abcd1234
 ```
+
 ```json
 resource "aws_instance" "frontend" {
   instance_type = "t3.micro"
@@ -217,8 +218,6 @@ resource "aws_instance" "frontend" {
     Name = "Frontend-HelloWorld"
   }
 }
-
-
 ```
 
 ----
@@ -255,6 +254,7 @@ terraform {
 ### Workspace
 
 Permet d'apporter une facilité pour gerer les environnements (évite de devoir gerer un fichier de configuration tfstate par envrionnement)
+
 ```bash
 $ terraform workspace list // The command will list all existing workspaces
 $ terraform workspace new <workspace_name> // The command will create a workspace
@@ -271,6 +271,7 @@ prod
 ```
 
 Gestion de l'état de la variable workspace
+
 ```json
 bucket = "${terraform.workspace == "preprod" ? var.bucket_demo_preprod : var.bucket_demo}"
 ```

@@ -1,6 +1,5 @@
-# Cours Terraform HEI
-#### By
-##### Laurent Grangeau
+# Terraform
+#### In a nutshell
 
 <i><a target="_new" href="http://twitter.com/laurentgrangeau">@laurentgrangeau</a> | <a target="_new" href="http://github.com/laurentgrangeau">http://github.com/laurentgrangeau</a></i>
 

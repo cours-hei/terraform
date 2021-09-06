@@ -53,7 +53,6 @@
 
 ### Inconvenients
 
-- Outil jeune (comporte des bogues)
 - Pas de rollback possible
 - Assez verbeux
 - Pauvre gestion des secrets

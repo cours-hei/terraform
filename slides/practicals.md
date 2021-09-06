@@ -85,16 +85,15 @@ Destroy complete! Resources: 8 destroyed.
 
 ----
 
-### FMT
+### Format
 Mise en forme du code, pour plus de lisibilité
 ```bash
 $ terraform fmt
 ```
 
-
 ----
 
-### SHOW
+### Show
 
 ```bash
 $ terraform show -json
