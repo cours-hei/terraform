@@ -5,6 +5,7 @@
 ### HCL (Hashicorp Configuration Language)
 
 Langage *"human-readable"* proche du JSON
+
 Décrit les ressource utilisées dans Terraform
 
 ----
@@ -12,6 +13,7 @@ Décrit les ressource utilisées dans Terraform
 ### Providers
 
 Responsable du cycle de vie de la ressource
+
 Basé sur le CRUD (*Create/Read/Update/Delete*)
 
 Plus de 1375 providers existants :
@@ -41,6 +43,7 @@ provider "aws" {
 ```
 
 Attention aux données sensibles à ne pas commiter dans le fichier
+
 Externaliser les AK/SK
 
 ```bash
@@ -117,12 +120,12 @@ Utilisation dans les fichiers .tf
 
 ```json
 resource "aws_s3_bucket" "lgu-bucket" {
-  bucket = "${var.aws_s3_bucket_terraform}"
+  bucket = "$var.aws_s3_bucket_terraform"
   acl    = "private"
 
   tags {
-    Tool    = "${var.tags-tool}"
-    Contact = "${var.tags-contact}"
+    Tool    = "$var.tags-tool"
+    Contact = "$var.tags-contact"
   }
 }
 ```
@@ -138,9 +141,9 @@ Groupe de ressource qui prend en entrée des *paramètres* et retournent en sort
 ```json
 module "lambda" {
   source            = "./lambda/"
-  toto              = "${var.aws_s3_bucket_toto_key}"
-  titi              = "${var.aws_s3_bucket_titi_key}"
-  tutu              = "${var.aws_s3_bucket_tutu_key}"
+  toto              = "$var.aws_s3_bucket_toto_key"
+  titi              = "$var.aws_s3_bucket_titi_key"
+  tutu              = "$var.aws_s3_bucket_tutu_key"
 }
 ```
 
@@ -152,15 +155,15 @@ Les modules peuvent produire des outputs que l'on pourra utiliser dans d'autres 
 
 ```json
 output "authorizer_uri" {
-  value = "${aws_lambda_function.lambda_toto.invoke_arn}"
+  value = "$aws_lambda_function.lambda_toto.invoke_arn"
 }
 ```
 
 ```json
 resource "aws_api_gateway_authorizer" "custom_authorizer" {
   name                             = "CustomAuthorizer"
-  rest_api_id                      = "${aws_api_gateway_rest_api.toto_api.id}"
-  authorizer_uri                   = "${module.lambda.authorizer_uri}"
+  rest_api_id                      = "$aws_api_gateway_rest_api.toto_api.id"
+  authorizer_uri                   = "$module.lambda.authorizer_uri"
   identity_validation_expression   = "Bearer .*"
   authorizer_result_ttl_in_seconds = "30"
 }
@@ -195,7 +198,7 @@ Utilisation des data sources dans les fichiers .tf
 ```json
 module "lgu-sn" {
     source = "lgu-sn"
-    subnet_id_1 = "${data.aws_subnet.subnet_id_1.id}"
+    subnet_id_1 = "$data.aws_subnet.subnet_id_1.id"
 }
 ```
 
@@ -273,5 +276,5 @@ prod
 Gestion de l'état de la variable workspace
 
 ```json
-bucket = "${terraform.workspace == "preprod" ? var.bucket_demo_preprod : var.bucket_demo}"
+bucket = "$terraform.workspace == "preprod" ? var.bucket_demo_preprod : var.bucket_demo"
 ```

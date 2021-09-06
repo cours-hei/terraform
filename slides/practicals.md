@@ -86,7 +86,9 @@ Destroy complete! Resources: 8 destroyed.
 ----
 
 ### Format
+
 Mise en forme du code, pour plus de lisibilité
+
 ```bash
 $ terraform fmt
 ```
@@ -95,7 +97,8 @@ $ terraform fmt
 
 ### Show
 
+Génération d'un JSON représentant l'état de Terraform
+
 ```bash
 $ terraform show -json
 ```
-terraform show a JSON representation of the state
