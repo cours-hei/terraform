@@ -1,7 +1,7 @@
 # Terraform
 #### In a nutshell
 
-<i><a target="_new" href="http://twitter.com/laurentgrangeau">@laurentgrangeau</a> | <a target="_new" href="http://github.com/laurentgrangeau">http://github.com/laurentgrangeau</a></i>
+<i><a target="_new" href="https://twitter.com/laurentgrangeau">@laurentgrangeau</a> | <a target="_new" href="https://github.com/laurentgrangeau">github.com/laurentgrangeau</a></i>
 
 ---
 
