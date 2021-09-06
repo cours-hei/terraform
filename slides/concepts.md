@@ -250,4 +250,27 @@ terraform {
 }
 ```
 
+----
 
+### Workspace
+
+Permet d'apporter une facilité pour gerer les environnements (évite de devoir gerer un fichier de configuration tfstate par envrionnement)
+```bash
+$ terraform workspace list // The command will list all existing workspaces
+$ terraform workspace new <workspace_name> // The command will create a workspace
+$ terraform workspace select <workspace_name> // The command select a workspace
+$ terraform workspace delete <workspace_name> // The command delete a workspace
+```
+
+```bash
+$ terraform workspace list
+default
+* dev
+preprod
+prod
+```
+
+Gestion de l'état de la variable workspace
+```json
+bucket = "${terraform.workspace == "preprod" ? var.bucket_demo_preprod : var.bucket_demo}"
+```

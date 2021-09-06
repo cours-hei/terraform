@@ -82,3 +82,21 @@ Plan: 0 to add, 0 to change, 8 to destroy.
 ...
 Destroy complete! Resources: 8 destroyed.
 ```
+
+----
+
+### FMT
+Mise en forme du code, pour plus de lisibilité
+```bash
+$ terraform fmt
+```
+
+
+----
+
+### SHOW
+
+```bash
+$ terraform show -json
+```
+terraform show a JSON representation of the state
